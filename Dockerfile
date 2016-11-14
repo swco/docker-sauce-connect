@@ -11,6 +11,7 @@ RUN apt-get update -qqy \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget https://saucelabs.com/downloads/sc-$SAUCE_VERSION-linux.tar.gz -O - | tar -xz
+RUN echo "127.0.0.1  behat.tests" >> /etc/hosts
 
 WORKDIR /usr/local/sauce-connect/sc-$SAUCE_VERSION-linux
 
